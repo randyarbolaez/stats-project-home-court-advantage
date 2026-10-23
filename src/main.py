@@ -29,16 +29,11 @@ every_year_of_experiment['year'] = every_year_of_experiment['year'].apply(get_nb
 
 ## cleaning up the data 
 
-# print(len(every_year_of_experiment))
-# print(">?>?>",len(every_year_of_experiment))
-# print(">?>?>",every_year_of_experiment.isnull().sum())
-# every_year_of_experiment['year'] = every_year_of_experiment['year'].dropna()
-# print(">?>?>dsfklsf",every_year_of_experiment)
-# print(">?>?>",len(every_year_of_experiment))
-
 removable_gameType = ['Playoffs','Preseason']
-
-# print(">?>?>",len(every_year_of_experiment))
 every_year_of_experiment = every_year_of_experiment[every_year_of_experiment.gameType.isin(removable_gameType) == False]
 # every_year_of_experiment.to_csv("data/clean/v_0_2.csv", index=True)
 # print(">?>?>",len(every_year_of_experiment))
+
+# getting relevant columns
+final_df = every_year_of_experiment[['hometeamId','awayteamId','winner','year']]
+# final_df.to_csv("data/clean/v_0_3.csv", index=True)
