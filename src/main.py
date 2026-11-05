@@ -37,3 +37,23 @@ every_year_of_experiment = every_year_of_experiment[every_year_of_experiment.gam
 # getting relevant columns
 final_df = every_year_of_experiment[['hometeamId','awayteamId','winner','year']]
 # final_df.to_csv("data/clean/v_0_3.csv", index=True)
+
+total_regular_season_games_for_year = {}
+
+for index,row in final_df.iterrows():
+    if total_regular_season_games_for_year.get(row['year']) == None:
+        total_regular_season_games_for_year[row['year']] = 1
+    else:
+        total_regular_season_games_for_year[row['year']] = total_regular_season_games_for_year[row['year']] + 1
+
+
+total_regular_season_game_home_team_won = {}
+for index,row in final_df.iterrows():
+    if row['winner'] == row['hometeamId']:
+        if total_regular_season_game_home_team_won.get(row['year']) == None:
+            total_regular_season_game_home_team_won[row['year']] = 1
+        else:
+            total_regular_season_game_home_team_won[row['year']] = total_regular_season_game_home_team_won[row['year']] + 1
+
+print('total_regular_season_games_for_year\n', total_regular_season_games_for_year)
+print('\ntotal_regular_season_game_home_team_won\n', total_regular_season_game_home_team_won)

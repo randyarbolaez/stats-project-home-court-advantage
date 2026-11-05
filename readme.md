@@ -11,3 +11,6 @@ License: [CC0 (Public Domain)](https://creativecommons.org/publicdomain/zero/1.0
 
 # Roadmap
 MLB, and the 2020-21 regular season due to the fact there were no fans in attendance.
+
+# Information
+The 2011-12 season there was an NBA lockout, teams only played 62 games. Before the 2004-05, there were only 29 teams.
